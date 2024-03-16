@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="542.0" prefWidth="813.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.monster.videotoaudio.vta.ScreenController">
+   <children>
+      <HBox prefHeight="54.0" prefWidth="813.0" AnchorPane.bottomAnchor="488.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <Label prefHeight="45.0" prefWidth="172.0" text="VTA">
+            <HBox.margin>
+               <Insets left="20.0" top="10.0" />
+            </HBox.margin>
+            <font>
+               <Font name="Bodoni MT Black" size="24.0" />
+            </font>
+            <textFill>
+               <RadialGradient centerX="0.494475138121547" centerY="0.46208530805687204" focusDistance="-0.27586206896551724" radius="1.0">
+                  <stops>
+                     <Stop>
+                        <color>
+                           <Color red="0.12841130793094635" green="0.8157894611358643" blue="0.5981197357177734" />
+                        </color>
+                     </Stop>
+                     <Stop offset="1.0">
+                        <color>
+                           <Color red="0.05043859779834747" green="0.9078947305679321" blue="0.6363669633865356" />
+                        </color>
+                     </Stop>
+                  </stops>
+               </RadialGradient>
+            </textFill></Label>
+
+            <ProgressBar fx:id="progressBar" prefHeight="24.0" prefWidth="566.0" progress="0.0" style="-fx-accent: #46cf76;">
+
+            <HBox.margin>
+               <Insets top="20.0" />
+            </HBox.margin>
+         </ProgressBar>
+         <Label fx:id="progPercentage" text="0%">
+            <font>
+               <Font size="13.0" />
+            </font>
+            <HBox.margin>
+               <Insets left="10.0" top="25.0" />
+            </HBox.margin>
+         </Label>
+      </HBox>
+      <VBox layoutX="12.0" layoutY="72.0" prefHeight="305.0" prefWidth="790.0" AnchorPane.bottomAnchor="165.0" AnchorPane.leftAnchor="12.0" AnchorPane.rightAnchor="11.0" AnchorPane.topAnchor="72.0">
+         <children>
+            <Label prefHeight="32.0" prefWidth="138.0" text="Select Files :-">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ScrollPane fx:id="listItems" prefHeight="313.0" prefWidth="680.0">
+               <VBox prefWidth="680">
+
+               </VBox>
+              </ScrollPane>
+         </children>
+      </VBox>
+      <HBox layoutX="14.0" layoutY="377.0" prefHeight="30.0" prefWidth="790.0" AnchorPane.topAnchor="380.0">
+         <HBox prefHeight="30" prefWidth="543.0">
+            <children>
+               <Label prefHeight="32.0" prefWidth="95.0" text="Counted Items : " />
+            </children>
+         <children>
+            <Label fx:id="counted_items" prefHeight="29.0" prefWidth="151.0" text="0">
+
+            </Label>
+               <HBox fx:id="filesConvertedLabelBox" prefHeight="37.0" prefWidth="288.0">
+                  <children>
+                     <Label prefHeight="37.0" prefWidth="118.0" text="Files Converted :" />
+                     <Label fx:id="labelForTotalFilesConverted" prefHeight="30.0" prefWidth="220.0" text="0" />
+                  </children></HBox>
+         </children>
+         </HBox>
+         <HBox alignment="TOP_RIGHT" prefHeight="30" prefWidth="251.0">
+
+               <HBox fx:id="addbtn" alignment="CENTER" prefHeight="30.0" prefWidth="176.0" style="-fx-background-color: blueViolet; -fx-border-radius: 50; -fx-background-radius: 50;">
+                  <children>
+                     <Label text="+" textFill="WHITE"> <font>
+                        <Font name="Arial" size="20.0" />
+                     </font></Label>
+
+                  </children>
+                  <children>
+                     <Label prefHeight="29.0" prefWidth="97.0" text="Add Items" textAlignment="CENTER" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Arial" size="13.0" />
+                     </font></Label>
+                  </children>
+               </HBox>
+               </HBox>
+      </HBox>
+      <HBox layoutX="12.0" layoutY="429.0" prefHeight="30.0" prefWidth="790.0">
+         <children>
+            <Label prefHeight="28.0" prefWidth="102.0" text="Output directory :-" />
+            <TextField fx:id="outputDirBox" onMouseClicked="#selectOutputDir" prefHeight="30.0" prefWidth="627.0" />
+            <Label alignment="CENTER" contentDisplay="CENTER" onMouseClicked="#selectOutputDir" prefHeight="30.0" prefWidth="35.0" style="-fx-border-width: 1; -fx-border-color: #aaa; -fx-border-radius: 5; -fx-background-radius: 5;" text="...">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Label>
+         </children></HBox>
+      <HBox layoutX="12.0" layoutY="473.0" prefHeight="20.0" prefWidth="790.0">
+         <HBox prefHeight="20.0" prefWidth="397.0">
+            <children>
+               <Label text="Convert Into :-">
+                  <font>
+                     <Font size="13.0" />
+                  </font></Label>
+               <ComboBox fx:id="selectFormat" prefWidth="150.0">
+                  <HBox.margin>
+                     <Insets left="20.0" />
+                  </HBox.margin>
+               </ComboBox>
+            </children></HBox>
+
+      </HBox>
+      <HBox fx:id="convertbtn" alignment="CENTER_RIGHT" layoutY="503.0" prefHeight="30.0" prefWidth="813.0">
+         <children>
+            <Label alignment="CENTER" prefHeight="28.0" prefWidth="182.0" style="-fx-background-color: #5783db; -fx-border-radius: 50; -fx-background-radius: 50;" text="Convert" textFill="WHITE">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="Bell MT" size="18.0" />
+               </font>
+            </Label>
+         </children></HBox>
+
+   </children>
+</AnchorPane>
